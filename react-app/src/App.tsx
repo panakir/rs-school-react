@@ -1,7 +1,12 @@
 import { Component } from 'react';
-class App extends Component {
+import { Main } from './components/main/Main';
+
+export class App extends Component {
   render() {
-    return <></>;
+    return (
+      <>
+        <Main />
+      </>
+    );
   }
 }
-export default App;

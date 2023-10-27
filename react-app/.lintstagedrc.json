@@ -1,4 +1,6 @@
 {
-  "./src/*.*": "npm run format:fix",
-  "*.{ts, tsx, js, jsx}": "npm run lint "
+  "*.{ts, tsx, js, jsx}": [
+    "npm run lint",
+    "git add "
+  ]
 }
