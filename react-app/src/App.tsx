@@ -1,6 +1,8 @@
 import { Component } from 'react';
 import { Main } from './components/main/Main';
 import { Starship } from './interfaces/interfaces';
+import { Header } from './components/header/Header';
+import { Footer } from './components/footer/Footer';
 
 export class App extends Component {
   async getData(text: string): Promise<Starship> {
@@ -14,7 +16,9 @@ export class App extends Component {
   render() {
     return (
       <>
+        <Header />
         <Main />
+        <Footer />
       </>
     );
   }

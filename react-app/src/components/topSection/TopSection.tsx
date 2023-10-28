@@ -9,7 +9,7 @@ export class TopSection extends Component<SearchInputProps, SearchInputState> {
   constructor(props: SearchInputProps) {
     super(props);
     this.state = {
-      searchInput: '',
+      searchInput: localStorage.getItem('searchRequest') || '',
     };
   }
 
@@ -34,6 +34,7 @@ export class TopSection extends Component<SearchInputProps, SearchInputState> {
               className="input input_text search__input"
               onChange={this.handleInputValue}
               value={searchInput}
+              placeholder='Enter the name of ship'
             />
             <button
               className="button button_search search__button"
