@@ -6,7 +6,37 @@
   gap: 15px;
 
   .card {
-    min-width: 300px;
-    flex-basis: 30%;
+    flex-basis: 18%;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background-color: lightgray;
+  border-radius: 7px;
+  height: 25vh;
+
+  &__title {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    list-style: none;
+    flex: 1 0 auto;
+  }
+
+  &__item {
+    display: block;
+    width: 100%;
+
+    span {
+      font-weight: 700;
+    }
   }
 }

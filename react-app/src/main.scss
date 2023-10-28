@@ -17,10 +17,18 @@
 }
 
 .button {
+  font-weight: 700;
   outline: none;
   border: none;
   text-transform: uppercase;
   padding: 10px 15px;
   background-color: white;
   border-radius: 7px;
+  cursor: pointer;
+  transition: all .3s;
+
+  &:hover {
+    color: lightgray;
+    background-color: black;
+  }
 }
