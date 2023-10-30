@@ -9,6 +9,13 @@ body {
   height: 100%;
 }
 
+.loading {
+  background: url('../public/loader.gif') center /cover no-repeat;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
 #root {
   display: flex;
   flex-direction: column;
