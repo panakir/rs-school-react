@@ -22,3 +22,10 @@ export interface CardData {
   starship: Starship;
   id: number;
 }
+
+export interface SearchState {
+  searchText: string;
+  loading: boolean;
+  resultOfSearch: [] | Starship[];
+  error: null | string;
+}

@@ -23,7 +23,6 @@ export class TopSection extends Component<SearchInputProps, SearchInputState> {
 
   render() {
     const { searchInput } = this.state;
-    console.log(searchInput);
 
     return (
       <>
@@ -34,7 +33,7 @@ export class TopSection extends Component<SearchInputProps, SearchInputState> {
               className="input input_text search__input"
               onChange={this.handleInputValue}
               value={searchInput}
-              placeholder='Enter the name of ship'
+              placeholder="Enter the name of ship"
             />
             <button
               className="button button_search search__button"

@@ -1,14 +1,7 @@
 import { Component } from 'react';
 import { TopSection } from '../topSection/TopSection';
 import { BottomSection } from '../bottomSection/BottomSection';
-import { Starship } from '../../interfaces/interfaces';
-
-interface SearchState {
-  searchText: string;
-  loading: boolean;
-  resultOfSearch: [] | Starship[];
-  error: null | string;
-}
+import { SearchState, Starship } from '../../interfaces/interfaces';
 
 export class Main extends Component<object, SearchState> {
   constructor(props: object) {
