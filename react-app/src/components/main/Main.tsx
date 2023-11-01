@@ -1,6 +1,6 @@
 import { Component } from 'react';
-import { TopSection } from '../topSection/TopSection';
-import { BottomSection } from '../bottomSection/BottomSection';
+import { TopSection } from './topSection/TopSection';
+import { BottomSection } from './bottomSection/BottomSection';
 import { SearchState, Starship } from '../../interfaces/interfaces';
 
 export class Main extends Component<object, SearchState> {

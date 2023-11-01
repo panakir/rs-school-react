@@ -2,7 +2,7 @@ import './topSection.scss';
 import {
   SearchInputProps,
   SearchInputState,
-} from '../../interfaces/interfaces';
+} from '../../../interfaces/interfaces';
 import { Component } from 'react';
 
 export class TopSection extends Component<SearchInputProps, SearchInputState> {

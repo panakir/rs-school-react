@@ -1,6 +1,6 @@
 import './bottomSection.scss';
 import { Component } from 'react';
-import { SearchResults } from '../../interfaces/interfaces';
+import { SearchResults } from '../../../interfaces/interfaces';
 
 export class BottomSection extends Component<SearchResults> {
   render() {
