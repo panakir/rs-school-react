@@ -15,7 +15,7 @@ export interface SearchInputState {
 }
 
 export interface SearchResults {
-  searchResults: Starship[];
+  searchResults: Starship[] | [];
 }
 
 export interface CardData {

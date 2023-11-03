@@ -10,7 +10,7 @@ body {
 }
 
 .loading {
-  background: url('../public/loader.gif') center /cover no-repeat;
+  background: url('../public/loader.gif') center / cover no-repeat;
   width: 200px;
   height: 200px;
   margin: 0 auto;
@@ -27,7 +27,6 @@ body {
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;
-
   }
 
   .footer {
@@ -51,7 +50,7 @@ body {
   background-color: white;
   border-radius: 7px;
   cursor: pointer;
-  transition: all .3s;
+  transition: all 0.3s;
 
   &:hover {
     color: lightgray;
