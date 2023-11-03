@@ -1,49 +1,41 @@
 import './topSection.scss';
-import {
-  SearchInputProps,
-  SearchInputState,
-} from '../../../interfaces/interfaces';
-import { Component } from 'react';
+import { SearchInputProps } from '../../../interfaces/interfaces';
+import { useState } from 'react';
 
-export class TopSection extends Component<SearchInputProps, SearchInputState> {
-  constructor(props: SearchInputProps) {
-    super(props);
-    this.state = {
-      searchInput: localStorage.getItem('searchRequest') || '',
-    };
-  }
+export const TopSection = (searchText: SearchInputProps) => {
+  const [searchInput, setSearchInput] = useState(
+    localStorage.getItem('searchRequest')
+  );
 
-  handleInputValue = (event: { target: { value: string } }) => {
-    this.setState({ searchInput: event.target.value });
+  const handleInputValue = (event: { target: { value: string } }): void => {
+    setSearchInput(event.target.value);
   };
 
-  handleSearchButton = () => {
-    this.props.searchText(this.state.searchInput);
+  const handleSearchButton = (): void => {
+    searchInput
+      ? searchText.searchText(searchInput)
+      : searchText.searchText('');
   };
 
-  render() {
-    const { searchInput } = this.state;
-
-    return (
-      <>
-        <div className="top-section">
-          <div className="search">
-            <input
-              type="text"
-              className="input input_text search__input"
-              onChange={this.handleInputValue}
-              value={searchInput}
-              placeholder="Enter the name of ship"
-            />
-            <button
-              className="button button_search search__button"
-              onClick={this.handleSearchButton}
-            >
-              search
-            </button>
-          </div>
+  return (
+    <>
+      <div className="top-section">
+        <div className="search">
+          <input
+            type="text"
+            className="input input_text search__input"
+            onChange={handleInputValue}
+            value={searchInput ? searchInput : ''}
+            placeholder="Enter the name of ship"
+          />
+          <button
+            className="button button_search search__button"
+            onClick={handleSearchButton}
+          >
+            search
+          </button>
         </div>
-      </>
-    );
-  }
-}
+      </div>
+    </>
+  );
+};

@@ -53,15 +53,15 @@ export class Main extends Component<object, SearchState> {
   };
 
   render() {
-    console.log(this.state);
-
     return (
       <>
         <main className="main">
           <TopSection searchText={this.handleSearch} />
-          {this.state.loading ?
-            (<div className='loading'></div>) : <BottomSection searchResults={this.state.resultOfSearch} />
-          }
+          {this.state.loading ? (
+            <div className="loading"></div>
+          ) : (
+            <BottomSection searchResults={this.state.resultOfSearch} />
+          )}
         </main>
       </>
     );
