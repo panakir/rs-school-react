@@ -1,20 +1,14 @@
-import { Component } from 'react';
+import { useEffect, useState } from 'react';
 import { TopSection } from './topSection/TopSection';
 import { BottomSection } from './bottomSection/BottomSection';
-import { SearchState, Starship } from '../../interfaces/interfaces';
+import { Starship } from '../../interfaces/interfaces';
 
-export class Main extends Component<object, SearchState> {
-  constructor(props: object) {
-    super(props);
-    this.state = {
-      searchText: '',
-      loading: false,
-      resultOfSearch: [],
-      error: null,
-    };
-  }
+export const Main = (): JSX.Element => {
+  const [searchText, setSearchText] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [resultOfSearch, setResultOfSearch] = useState<Starship[]>([]);
 
-  async getData(text: string): Promise<Starship[]> {
+  const getData = async (text: string): Promise<Starship[]> => {
     const url = 'https://swapi.dev/api/starships/?search=' + text;
     const response = await fetch(url)
       .then((res) => res.json())
@@ -23,47 +17,38 @@ export class Main extends Component<object, SearchState> {
         throw new Error(error);
       });
     return response;
-  }
+  };
 
-  componentDidMount(): void {
-    const prevSearch = localStorage.getItem('searchRequest');
-    if (prevSearch) {
-      this.handleSearch(prevSearch);
-    }
-  }
-
-  handleSearch = async (text: string) => {
-    this.setState({ loading: true });
-    const data = await this.getData(text);
+  const handleSearch = async (text: string): Promise<void> => {
+    setLoading(true);
+    const data = await getData(text);
+    localStorage.setItem('searchRequest', text);
     if (data) {
-      this.setState({
-        searchText: text,
-        loading: false,
-        resultOfSearch: data,
-        error: null,
-      });
-      localStorage.setItem('searchRequest', text);
+      setSearchText(text);
+      setLoading(false);
+      setResultOfSearch(data);
     } else {
-      this.setState({
-        loading: false,
-        resultOfSearch: [],
-        error: 'Error',
-      });
+      setLoading(false);
+      setResultOfSearch([]);
     }
   };
 
-  render() {
-    return (
-      <>
-        <main className="main">
-          <TopSection searchText={this.handleSearch} />
-          {this.state.loading ? (
-            <div className="loading"></div>
-          ) : (
-            <BottomSection searchResults={this.state.resultOfSearch} />
-          )}
-        </main>
-      </>
-    );
-  }
-}
+  useEffect((): void => {
+    if (searchText) {
+      handleSearch(searchText);
+    }
+  }, [handleSearch, searchText]);
+
+  return (
+    <>
+      <main className="main">
+        <TopSection searchText={handleSearch} />
+        {loading ? (
+          <div className="loading"></div>
+        ) : (
+          <BottomSection searchResults={resultOfSearch} />
+        )}
+      </main>
+    </>
+  );
+};

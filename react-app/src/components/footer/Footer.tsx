@@ -1,6 +1,6 @@
 import './footer.scss';
 
-export const Footer = () => {
+export const Footer = (): JSX.Element => {
   return (
     <footer className="footer">
       <div className="footer__author">

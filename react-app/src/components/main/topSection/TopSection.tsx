@@ -2,7 +2,7 @@ import './topSection.scss';
 import { SearchInputProps } from '../../../interfaces/interfaces';
 import { useState } from 'react';
 
-export const TopSection = (searchText: SearchInputProps) => {
+export const TopSection = (searchText: SearchInputProps): JSX.Element => {
   const [searchInput, setSearchInput] = useState(
     localStorage.getItem('searchRequest')
   );

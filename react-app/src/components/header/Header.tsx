@@ -1,6 +1,6 @@
 import './header.scss';
 
-export const Header = () => {
+export const Header = (): JSX.Element => {
   return (
     <header className="header">
       <img className="logo header__logo" src="./logo.png" alt="logo" />

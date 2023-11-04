@@ -1,7 +1,7 @@
 import './bottomSection.scss';
 import { SearchResults } from '../../../interfaces/interfaces';
 
-export const BottomSection = (data: SearchResults) => {
+export const BottomSection = (data: SearchResults): JSX.Element => {
   return (
     <div className="bottom-section">
       {data.searchResults.map((item, index) => (
