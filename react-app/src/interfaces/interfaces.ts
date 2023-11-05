@@ -14,10 +14,6 @@ export interface SearchInputState {
   searchInput: string;
 }
 
-export interface SearchResults {
-  searchResults: Starship[] | [];
-}
-
 export interface CardData {
   starship: Starship;
   id: number;

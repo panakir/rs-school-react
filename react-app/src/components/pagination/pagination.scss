@@ -1,0 +1,14 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 30px auto;
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+    background-color: lightgrey;
+    padding: 10px 15px;
+    border-radius: 7px;
+  }
+}
