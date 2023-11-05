@@ -57,3 +57,9 @@ body {
     background-color: black;
   }
 }
+
+.error {
+  width: 100%;
+  height: 50vh;
+  background: url(../public/404page.png) center / cover no-repeat;
+}

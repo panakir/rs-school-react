@@ -1,4 +1,5 @@
 import './header.scss';
+import { ErrorButton } from '../errorBoundary/ErrorButton';
 
 export const Header = (): JSX.Element => {
   return (
@@ -9,6 +10,7 @@ export const Header = (): JSX.Element => {
           here you can find out information about ships from Star Wars
         </h1>
       </div>
+      <ErrorButton />
     </header>
   );
 };
