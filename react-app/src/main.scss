@@ -59,11 +59,25 @@ body {
 }
 
 .error {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
   flex: 1 0 auto;
   background: url(../public/404page.png) center / contain no-repeat;
 
-  &__title {
-    text-align: center;
-    margin-top: 50px;
+  &__link {
+    margin: 15px auto 0;
+    width: 150px;
+    text-decoration: none;
+    color: inherit;
+    background-color: lightgrey;
+    padding: 10px 15px;
+    border-radius: 7px;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: black;
+      color: lightgrey;
+    }
   }
 }
