@@ -1,31 +1,33 @@
 import './bottomSection.scss';
-import { SearchResults } from '../../../interfaces/interfaces';
+import { Starship } from '../../../interfaces/interfaces';
+import { StarshipCard } from '../../StarshipCard/StarshipCard';
+import { Pagination } from '../../pagination/Pagination';
 
-export const BottomSection = (data: SearchResults): JSX.Element => {
+interface Props {
+  searchResults: Starship[] | [];
+  resultsOnPage: number;
+  countResults: number;
+  setCurrentPage: (page: number) => void;
+}
+
+export const BottomSection = ({
+  searchResults,
+  resultsOnPage,
+  countResults,
+  setCurrentPage,
+}: Props): JSX.Element => {
   return (
-    <div className="bottom-section">
-      {data.searchResults.map((item, index) => (
-        <div key={index} className="card">
-          <h4 className="card__title">{item.name}</h4>
-          <ul className="card__info">
-            <li className="card__item">
-              <span>Model: </span>
-              {item.model}
-            </li>
-            <li className="card__item">
-              <span>Starship class: </span>
-              {item.starship_class}
-            </li>
-            <li className="card__item">
-              <span>Number of passengers: </span>
-              {item.passengers}
-            </li>
-            <li className="card__item">
-              <span>Length of ship: </span> {item.length}
-            </li>
-          </ul>
-        </div>
-      ))}
-    </div>
+    <>
+      <div className="bottom-section">
+        {searchResults.map((item, index) => (
+          <StarshipCard key={index} starship={item} />
+        ))}
+      </div>
+      <Pagination
+        resultsOnPage={resultsOnPage}
+        countResults={countResults}
+        setCurrentPage={setCurrentPage}
+      />
+    </>
   );
 };
