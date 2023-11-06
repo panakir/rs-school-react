@@ -22,7 +22,7 @@ export const Pagination = ({
           <NavLink
             className="pagination__link"
             key={numberOfPage}
-            to={`/search/${numberOfPage}`}
+            to={`/?page=${numberOfPage}`}
             onClick={(): void => setCurrentPage(numberOfPage)}
           >
             {numberOfPage}

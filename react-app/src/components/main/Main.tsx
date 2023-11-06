@@ -3,12 +3,11 @@ import { TopSection } from './topSection/TopSection';
 import { BottomSection } from './bottomSection/BottomSection';
 import { Starship } from '../../interfaces/interfaces';
 import { getAllStarships, getSearchPage } from '../../API';
-import { useNavigate, useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 
 const resultsOnPage = 10;
 
 export const Main = (): JSX.Element => {
-  const navigation = useNavigate();
   const [searchText, setSearchText] = useState(
     localStorage.getItem('searchRequest') || ''
   );
@@ -35,7 +34,6 @@ export const Main = (): JSX.Element => {
           setSearchText(text);
           localStorage.setItem('searchRequest', text);
           setCurrentPage(1);
-          // navigation('/search/1')
         }
       } catch {
         setResultOfSearch([]);
@@ -43,7 +41,7 @@ export const Main = (): JSX.Element => {
         setLoading(false);
       }
     },
-    [currentPage, navigation, searchText]
+    [currentPage, searchText]
   );
 
   useEffect((): void => {
