@@ -1,8 +1,9 @@
 import './topSection.scss';
-import { SearchInputProps } from '../../../interfaces/interfaces';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { MainSectionContext } from '../../context/context';
 
-export const TopSection = (searchText: SearchInputProps): JSX.Element => {
+export const TopSection = (): JSX.Element => {
+  const { handleSearch } = useContext(MainSectionContext);
   const [searchInput, setSearchInput] = useState(
     localStorage.getItem('searchRequest') || ''
   );
@@ -12,9 +13,7 @@ export const TopSection = (searchText: SearchInputProps): JSX.Element => {
   };
 
   const handleSearchButton = (): void => {
-    searchInput
-      ? searchText.searchText(searchInput)
-      : searchText.searchText('');
+    searchInput ? handleSearch(searchInput) : handleSearch('');
   };
 
   return (

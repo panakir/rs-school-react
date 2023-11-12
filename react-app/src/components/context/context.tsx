@@ -9,4 +9,5 @@ export const MainSectionContext = createContext<MainSectionContextData>({
   setCountAllResults: () => {},
   resultOfSearch: [],
   setResultOfSearch: () => [],
+  handleSearch: () => {},
 });

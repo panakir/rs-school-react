@@ -70,10 +70,11 @@ export const Main = (): JSX.Element => {
           setCountAllResults,
           resultOfSearch,
           setResultOfSearch,
+          handleSearch,
         }}
       >
         <main className="main">
-          <TopSection searchText={handleSearch} />
+          <TopSection />
           {loading ? <div className="loading"></div> : <BottomSection />}
         </main>
       </MainSectionContext.Provider>
