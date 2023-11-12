@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 export const TopSection = (searchText: SearchInputProps): JSX.Element => {
   const [searchInput, setSearchInput] = useState(
-    localStorage.getItem('searchRequest')
+    localStorage.getItem('searchRequest') || ''
   );
 
   const handleInputValue = (event: { target: { value: string } }): void => {

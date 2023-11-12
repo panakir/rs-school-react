@@ -2,8 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { TopSection } from './topSection/TopSection';
 import { BottomSection } from './bottomSection/BottomSection';
 import { Starship } from '../../interfaces/interfaces';
-import { getAllStarships, getSearchPage } from '../../API';
-import { useParams } from 'react-router-dom';
+import { getSearchPage } from '../../API';
 
 const resultsOnPage = 10;
 
@@ -13,9 +12,9 @@ export const Main = (): JSX.Element => {
   );
   const [loading, setLoading] = useState(false);
   const [resultOfSearch, setResultOfSearch] = useState<Starship[]>([]);
-  const { page } = useParams();
-  const [currentPage, setCurrentPage] = useState(Number(page) | 1);
-  const [countResults, setCountResults] = useState(resultsOnPage);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [countAllResults, setCountAllResults] = useState(resultsOnPage);
 
   const handleSearch = useCallback(
     async (text: string): Promise<void> => {
@@ -23,13 +22,13 @@ export const Main = (): JSX.Element => {
       try {
         if (text === searchText) {
           const search = await getSearchPage(text, currentPage);
-          setCountResults(search.count);
+          setCountAllResults(search.count);
           setResultOfSearch(search.results);
           setSearchText(text);
           localStorage.setItem('searchRequest', text);
         } else {
-          const search = await getSearchPage(searchText, 1);
-          setCountResults(search.count);
+          const search = await getSearchPage(searchText);
+          setCountAllResults(search.count);
           setResultOfSearch(search.results);
           setSearchText(text);
           localStorage.setItem('searchRequest', text);
@@ -44,26 +43,20 @@ export const Main = (): JSX.Element => {
     [currentPage, searchText]
   );
 
-  useEffect((): void => {
-    if (page) {
-      setCurrentPage(parseInt(page, 10));
-    }
-  }, [page]);
-
   useEffect(() => {
     const getData = async (): Promise<void> => {
       if (searchText) {
         handleSearch(searchText);
       } else {
         setLoading(true);
-        const search = await getAllStarships();
-        setResultOfSearch(search);
+        const search = await getSearchPage('', currentPage);
+        setResultOfSearch(search.results);
         setSearchText('');
         setLoading(false);
       }
     };
     getData();
-  }, [searchText, handleSearch]);
+  }, [searchText, handleSearch, currentPage]);
 
   return (
     <>
@@ -75,7 +68,7 @@ export const Main = (): JSX.Element => {
           <BottomSection
             searchResults={resultOfSearch}
             resultsOnPage={resultsOnPage}
-            countResults={countResults}
+            countResults={countAllResults}
             setCurrentPage={setCurrentPage}
           />
         )}

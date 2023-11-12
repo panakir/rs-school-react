@@ -31,10 +31,7 @@ export const getStarship = async (text: string): Promise<Starship[]> => {
   return response;
 };
 
-export const getSearchPage = async (
-  text: string,
-  page = 1
-): Promise<AllData> => {
+export const getSearchPage = async (text = '', page = 1): Promise<AllData> => {
   const url = `https://swapi.dev/api/starships/?search=${text}&page=${page}`;
   const response = await fetch(url)
     .then((res) => res.json())
