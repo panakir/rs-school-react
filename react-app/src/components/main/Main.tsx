@@ -3,6 +3,7 @@ import { TopSection } from './topSection/TopSection';
 import { BottomSection } from './bottomSection/BottomSection';
 import { Starship } from '../../interfaces/interfaces';
 import { getSearchPage } from '../../API';
+import { MainSectionContext } from '../context/context';
 
 const resultsOnPage = 10;
 
@@ -60,19 +61,22 @@ export const Main = (): JSX.Element => {
 
   return (
     <>
-      <main className="main">
-        <TopSection searchText={handleSearch} />
-        {loading ? (
-          <div className="loading"></div>
-        ) : (
-          <BottomSection
-            searchResults={resultOfSearch}
-            resultsOnPage={resultsOnPage}
-            countResults={countAllResults}
-            setCurrentPage={setCurrentPage}
-          />
-        )}
-      </main>
+      <MainSectionContext.Provider
+        value={{
+          resultsOnPage,
+          currentPage,
+          setCurrentPage,
+          countAllResults,
+          setCountAllResults,
+          resultOfSearch,
+          setResultOfSearch,
+        }}
+      >
+        <main className="main">
+          <TopSection searchText={handleSearch} />
+          {loading ? <div className="loading"></div> : <BottomSection />}
+        </main>
+      </MainSectionContext.Provider>
     </>
   );
 };

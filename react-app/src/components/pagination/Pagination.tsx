@@ -1,18 +1,12 @@
+import { useContext } from 'react';
 import './pagination.scss';
 import { NavLink } from 'react-router-dom';
+import { MainSectionContext } from '../context/context';
 
-interface Props {
-  resultsOnPage: number;
-  countResults: number;
-  setCurrentPage: (page: number) => void;
-}
-
-export const Pagination = ({
-  resultsOnPage,
-  countResults,
-  setCurrentPage,
-}: Props): JSX.Element => {
-  const pagesCount = Math.ceil(countResults / resultsOnPage);
+export const Pagination = (): JSX.Element => {
+  const { resultsOnPage, countAllResults, setCurrentPage } =
+    useContext(MainSectionContext);
+  const pagesCount = Math.ceil(countAllResults / resultsOnPage);
   const numbersOfPage = Array.from({ length: pagesCount }, (_, i) => i + 1);
 
   return (

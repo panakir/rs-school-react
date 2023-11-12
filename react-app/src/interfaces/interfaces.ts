@@ -25,3 +25,13 @@ export interface SearchState {
   resultOfSearch: [] | Starship[];
   error: null | string;
 }
+
+export interface MainSectionContextData {
+  resultsOnPage: number;
+  currentPage: number;
+  setCurrentPage: (page: number) => void;
+  countAllResults: number;
+  setCountAllResults: (count: number) => void;
+  resultOfSearch: Starship[];
+  setResultOfSearch: (data: Starship[]) => void;
+}
