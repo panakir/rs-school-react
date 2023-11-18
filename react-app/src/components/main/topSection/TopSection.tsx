@@ -12,6 +12,7 @@ export const TopSection = (): JSX.Element => {
     setSearchInput(event.target.value);
   };
 
+  // TODO: think about checked value
   const handleSearchButton = (): void => {
     searchInput ? handleSearch(searchInput) : handleSearch('');
   };

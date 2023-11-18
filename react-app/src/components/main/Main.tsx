@@ -60,24 +60,22 @@ export const Main = (): JSX.Element => {
   }, [searchText, handleSearch, currentPage]);
 
   return (
-    <>
-      <MainSectionContext.Provider
-        value={{
-          resultsOnPage,
-          currentPage,
-          setCurrentPage,
-          countAllResults,
-          setCountAllResults,
-          resultOfSearch,
-          setResultOfSearch,
-          handleSearch,
-        }}
-      >
-        <main className="main">
-          <TopSection />
-          {loading ? <div className="loading"></div> : <BottomSection />}
-        </main>
-      </MainSectionContext.Provider>
-    </>
+    <MainSectionContext.Provider
+      value={{
+        resultsOnPage,
+        currentPage,
+        setCurrentPage,
+        countAllResults,
+        setCountAllResults,
+        resultOfSearch,
+        setResultOfSearch,
+        handleSearch,
+      }}
+    >
+      <main className="main">
+        <TopSection />
+        {loading ? <div className="loading"></div> : <BottomSection />}
+      </main>
+    </MainSectionContext.Provider>
   );
 };
