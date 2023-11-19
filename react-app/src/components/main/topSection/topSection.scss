@@ -1,0 +1,18 @@
+.top-section {
+  background-color: lightgray;
+  padding: 30px;
+  border-radius: 0 0 10px 10px;
+  display: flex;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.search {
+  display: flex;
+  gap: 15px;
+  margin: 0 auto;
+
+  &__input {
+    font-size: 16px;
+  }
+}
