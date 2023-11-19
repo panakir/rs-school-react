@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1700338961642" clover="3.2.0">
-  <project timestamp="1700338961643" name="All files">
-    <metrics statements="57" coveredstatements="57" conditionals="8" coveredconditionals="8" methods="8" coveredmethods="4" elements="73" coveredelements="69" complexity="0" loc="57" ncloc="57" packages="3" files="3" classes="3"/>
+<coverage generated="1700424117932" clover="3.2.0">
+  <project timestamp="1700424117932" name="All files">
+    <metrics statements="174" coveredstatements="163" conditionals="7" coveredconditionals="7" methods="13" coveredmethods="5" elements="194" coveredelements="175" complexity="0" loc="174" ncloc="174" packages="8" files="8" classes="8"/>
     <package name="src">
       <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
       <file name="sum.ts" path="D:\WWW\2023\RS-School\React-JS\rs-school-react\react-app\src\sum.ts">
@@ -31,50 +31,197 @@
       </file>
     </package>
     <package name="src.components.main.topSection">
-      <metrics statements="41" coveredstatements="41" conditionals="7" coveredconditionals="7" methods="3" coveredmethods="3"/>
+      <metrics statements="48" coveredstatements="46" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="2"/>
       <file name="TopSection.tsx" path="D:\WWW\2023\RS-School\React-JS\rs-school-react\react-app\src\components\main\topSection\TopSection.tsx">
-        <metrics statements="41" coveredstatements="41" conditionals="7" coveredconditionals="7" methods="3" coveredmethods="3"/>
+        <metrics statements="48" coveredstatements="46" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="10" type="stmt"/>
+        <line num="11" count="10" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="10" type="stmt"/>
+        <line num="13" count="10" type="stmt"/>
+        <line num="14" count="10" type="stmt"/>
+        <line num="15" count="10" type="stmt"/>
+        <line num="16" count="10" type="stmt"/>
+        <line num="17" count="10" type="cond" truecount="1" falsecount="0"/>
+        <line num="18" count="8" type="stmt"/>
+        <line num="19" count="8" type="stmt"/>
+        <line num="20" count="8" type="stmt"/>
+        <line num="21" count="10" type="stmt"/>
+        <line num="22" count="10" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="10" type="stmt"/>
+        <line num="26" count="10" type="stmt"/>
+        <line num="27" count="10" type="stmt"/>
+        <line num="28" count="10" type="stmt"/>
+        <line num="29" count="10" type="stmt"/>
+        <line num="30" count="10" type="stmt"/>
+        <line num="31" count="10" type="stmt"/>
+        <line num="32" count="10" type="stmt"/>
+        <line num="33" count="10" type="stmt"/>
+        <line num="34" count="10" type="stmt"/>
+        <line num="35" count="10" type="stmt"/>
+        <line num="36" count="10" type="stmt"/>
+        <line num="37" count="10" type="stmt"/>
+        <line num="38" count="10" type="stmt"/>
+        <line num="39" count="10" type="stmt"/>
+        <line num="40" count="10" type="stmt"/>
+        <line num="41" count="10" type="stmt"/>
+        <line num="42" count="10" type="stmt"/>
+        <line num="43" count="10" type="stmt"/>
+        <line num="44" count="10" type="stmt"/>
+        <line num="45" count="10" type="stmt"/>
+        <line num="46" count="10" type="stmt"/>
+        <line num="47" count="10" type="stmt"/>
+        <line num="48" count="10" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.main.topSection.amountItemsPerPage">
+      <metrics statements="29" coveredstatements="24" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="1"/>
+      <file name="AmountItemsPerPage.tsx" path="D:\WWW\2023\RS-School\React-JS\rs-school-react\react-app\src\components\main\topSection\amountItemsPerPage\AmountItemsPerPage.tsx">
+        <metrics statements="29" coveredstatements="24" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="6" count="19" type="stmt"/>
-        <line num="7" count="19" type="stmt"/>
-        <line num="8" count="19" type="stmt"/>
-        <line num="9" count="19" type="stmt"/>
-        <line num="10" count="19" type="stmt"/>
-        <line num="11" count="19" type="cond" truecount="1" falsecount="0"/>
-        <line num="12" count="16" type="stmt"/>
-        <line num="13" count="16" type="stmt"/>
-        <line num="14" count="19" type="stmt"/>
-        <line num="15" count="19" type="stmt"/>
-        <line num="16" count="19" type="cond" truecount="1" falsecount="0"/>
-        <line num="17" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="18" count="2" type="stmt"/>
-        <line num="19" count="19" type="stmt"/>
-        <line num="20" count="19" type="stmt"/>
-        <line num="21" count="19" type="stmt"/>
-        <line num="22" count="19" type="stmt"/>
-        <line num="23" count="19" type="stmt"/>
-        <line num="24" count="19" type="stmt"/>
-        <line num="25" count="19" type="stmt"/>
-        <line num="26" count="19" type="stmt"/>
-        <line num="27" count="19" type="stmt"/>
-        <line num="28" count="19" type="cond" truecount="2" falsecount="0"/>
-        <line num="29" count="19" type="stmt"/>
-        <line num="30" count="19" type="stmt"/>
-        <line num="31" count="19" type="stmt"/>
-        <line num="32" count="19" type="stmt"/>
-        <line num="33" count="19" type="stmt"/>
-        <line num="34" count="19" type="stmt"/>
-        <line num="35" count="19" type="stmt"/>
-        <line num="36" count="19" type="stmt"/>
-        <line num="37" count="19" type="stmt"/>
-        <line num="38" count="19" type="stmt"/>
-        <line num="39" count="19" type="stmt"/>
-        <line num="40" count="19" type="stmt"/>
-        <line num="41" count="19" type="stmt"/>
+        <line num="6" count="10" type="stmt"/>
+        <line num="7" count="10" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="10" type="stmt"/>
+        <line num="9" count="10" type="stmt"/>
+        <line num="10" count="10" type="stmt"/>
+        <line num="11" count="10" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="10" type="stmt"/>
+        <line num="18" count="10" type="stmt"/>
+        <line num="19" count="10" type="stmt"/>
+        <line num="20" count="10" type="stmt"/>
+        <line num="21" count="10" type="stmt"/>
+        <line num="22" count="10" type="stmt"/>
+        <line num="23" count="10" type="stmt"/>
+        <line num="24" count="10" type="stmt"/>
+        <line num="25" count="10" type="stmt"/>
+        <line num="26" count="10" type="stmt"/>
+        <line num="27" count="10" type="stmt"/>
+        <line num="28" count="10" type="stmt"/>
+        <line num="29" count="10" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.store">
+      <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.tsx" path="D:\WWW\2023\RS-School\React-JS\rs-school-react\react-app\src\store\index.tsx">
+        <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.store.amountItemsPerPage">
+      <metrics statements="22" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="amountItemsPerPage.ts" path="D:\WWW\2023\RS-School\React-JS\rs-school-react\react-app\src\store\amountItemsPerPage\amountItemsPerPage.ts">
+        <metrics statements="22" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.store.isLoadingSlice">
+      <metrics statements="22" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="isLoadingSlice.ts" path="D:\WWW\2023\RS-School\React-JS\rs-school-react\react-app\src\store\isLoadingSlice\isLoadingSlice.ts">
+        <metrics statements="22" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.store.searchValueSlice">
+      <metrics statements="22" coveredstatements="22" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="searchValueSlice.ts" path="D:\WWW\2023\RS-School\React-JS\rs-school-react\react-app\src\store\searchValueSlice\searchValueSlice.ts">
+        <metrics statements="22" coveredstatements="22" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="8" type="stmt"/>
+        <line num="17" count="8" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
       </file>
     </package>
   </project>
