@@ -4,6 +4,7 @@ import { MainSectionContext } from '../../context/context';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../../store';
 import { setSearchValue } from '../../../store/searchValueSlice/searchValueSlice';
+import { AmountItemsPerPage } from './amountItemsPerPage/AmountItemsPerPage';
 
 export const TopSection = (): JSX.Element => {
   const searchValue = useSelector(
@@ -40,6 +41,7 @@ export const TopSection = (): JSX.Element => {
             search
           </button>
         </div>
+        <AmountItemsPerPage />
       </div>
     </>
   );

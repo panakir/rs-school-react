@@ -8,16 +8,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import { setLoadingOnPage } from '../../store/isLoadingSlice/isLoadingSlice';
 
-const resultsOnPage = 10;
-
 export const Main = (): JSX.Element => {
+  const dispatch = useDispatch();
   const isLoading = useSelector(
     (state: RootState) => state.isLoading.isLoading
   );
-  const dispatch = useDispatch();
+  const searchValue = useSelector(
+    (state: RootState) => state.searchValue.searchValue
+  );
 
-  const [searchText, setSearchText] = useState(
-    localStorage.getItem('searchRequest') || ''
+  const resultsOnPage = useSelector(
+    (state: RootState) => state.amountItemsOnPage.amount
   );
 
   const [resultOfSearch, setResultOfSearch] = useState<Starship[]>([]);
@@ -29,17 +30,15 @@ export const Main = (): JSX.Element => {
     async (text: string): Promise<void> => {
       dispatch(setLoadingOnPage(true));
       try {
-        if (text === searchText) {
-          const search = await getSearchPage(text, currentPage);
+        if (text === searchValue) {
+          const search = await getSearchPage(searchValue, currentPage);
           setCountAllResults(search.count);
           setResultOfSearch(search.results);
-          setSearchText(text);
-          localStorage.setItem('searchRequest', text);
+          localStorage.setItem('searchRequest', searchValue);
         } else {
-          const search = await getSearchPage(searchText);
+          const search = await getSearchPage(text);
           setCountAllResults(search.count);
           setResultOfSearch(search.results);
-          setSearchText(text);
           localStorage.setItem('searchRequest', text);
           setCurrentPage(1);
         }
@@ -49,23 +48,22 @@ export const Main = (): JSX.Element => {
         dispatch(setLoadingOnPage(false));
       }
     },
-    [currentPage, searchText]
+    [currentPage, searchValue, dispatch]
   );
 
   useEffect(() => {
     const getData = async (): Promise<void> => {
-      if (searchText) {
-        handleSearch(searchText);
+      if (searchValue) {
+        handleSearch(searchValue);
       } else {
         dispatch(setLoadingOnPage(true));
         const search = await getSearchPage('', currentPage);
         setResultOfSearch(search.results);
-        setSearchText('');
         dispatch(setLoadingOnPage(false));
       }
     };
     getData();
-  }, [searchText, handleSearch, currentPage]);
+  }, [currentPage, resultsOnPage]);
 
   return (
     <MainSectionContext.Provider
