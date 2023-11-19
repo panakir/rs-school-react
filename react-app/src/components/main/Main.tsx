@@ -4,14 +4,22 @@ import { BottomSection } from './bottomSection/BottomSection';
 import { Starship } from '../../interfaces/interfaces';
 import { getSearchPage } from '../../API';
 import { MainSectionContext } from '../context/context';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../store';
+import { setLoadingOnPage } from '../../store/isLoadingSlice/isLoadingSlice';
 
 const resultsOnPage = 10;
 
 export const Main = (): JSX.Element => {
+  const isLoading = useSelector(
+    (state: RootState) => state.isLoading.isLoading
+  );
+  const dispatch = useDispatch();
+
   const [searchText, setSearchText] = useState(
     localStorage.getItem('searchRequest') || ''
   );
-  const [loading, setLoading] = useState(false);
+
   const [resultOfSearch, setResultOfSearch] = useState<Starship[]>([]);
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -19,7 +27,7 @@ export const Main = (): JSX.Element => {
 
   const handleSearch = useCallback(
     async (text: string): Promise<void> => {
-      setLoading(true);
+      dispatch(setLoadingOnPage(true));
       try {
         if (text === searchText) {
           const search = await getSearchPage(text, currentPage);
@@ -38,7 +46,7 @@ export const Main = (): JSX.Element => {
       } catch {
         setResultOfSearch([]);
       } finally {
-        setLoading(false);
+        dispatch(setLoadingOnPage(false));
       }
     },
     [currentPage, searchText]
@@ -49,11 +57,11 @@ export const Main = (): JSX.Element => {
       if (searchText) {
         handleSearch(searchText);
       } else {
-        setLoading(true);
+        dispatch(setLoadingOnPage(true));
         const search = await getSearchPage('', currentPage);
         setResultOfSearch(search.results);
         setSearchText('');
-        setLoading(false);
+        dispatch(setLoadingOnPage(false));
       }
     };
     getData();
@@ -74,7 +82,7 @@ export const Main = (): JSX.Element => {
     >
       <main className="main">
         <TopSection />
-        {loading ? <div className="loading"></div> : <BottomSection />}
+        {isLoading ? <div className="loading"></div> : <BottomSection />}
       </main>
     </MainSectionContext.Provider>
   );
