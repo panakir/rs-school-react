@@ -1,0 +1,44 @@
+.bottom-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  flex: 1 0 auto;
+
+  .card {
+    flex-basis: 18%;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background-color: lightgray;
+  border-radius: 7px;
+  height: 25vh;
+  cursor: pointer;
+
+  &__title {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    list-style: none;
+    flex: 1 0 auto;
+  }
+
+  &__item {
+    display: block;
+    width: 100%;
+
+    span {
+      font-weight: 700;
+    }
+  }
+}

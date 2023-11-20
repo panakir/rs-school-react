@@ -1,0 +1,17 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 10px;
+  background-color: lightgray;
+  border-radius: 10px 10px 0 0;
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__logo-rs {
+    width: 100px;
+  }
+}
